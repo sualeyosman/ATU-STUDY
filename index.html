@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-header">
+      <a class="brand" href="#" aria-label="Study Planner home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>Study Planner</span>
+      </a>
+      <span class="header-note">A little progress every day</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR STUDY SPACE</p>
+      <h1 id="page-title">Make room for <span>what matters.</span></h1>
+      <p class="intro-copy">Keep your assignments and study tasks in one calm, clear place.</p>
+    </section>
+
+    <section class="planner" aria-label="Study task planner">
+      <form class="task-form" id="task-form">
+        <div class="form-heading">
+          <div>
+            <h2>Add a task</h2>
+            <p>What do you need to work on?</p>
+          </div>
+          <span class="form-icon" aria-hidden="true">＋</span>
+        </div>
+
+        <label for="task-title">Task title</label>
+        <input
+          id="task-title"
+          name="title"
+          type="text"
+          maxlength="120"
+          placeholder="e.g. Read chapter 4"
+          autocomplete="off"
+          required
+        >
+
+        <label for="task-subject">Subject or course <span class="optional">(optional)</span></label>
+        <input
+          id="task-subject"
+          name="subject"
+          type="text"
+          maxlength="80"
+          placeholder="e.g. Biology"
+          autocomplete="off"
+        >
+
+        <p class="form-error" id="form-error" role="alert" hidden>Please enter a task title.</p>
+        <button class="add-button" type="submit">Add to my list <span aria-hidden="true">→</span></button>
+      </form>
+
+      <section class="task-panel" aria-labelledby="tasks-heading">
+        <div class="list-heading">
+          <div>
+            <p class="eyebrow">YOUR PLAN</p>
+            <h2 id="tasks-heading">Study tasks <span class="task-count" id="task-count">0</span></h2>
+          </div>
+          <label class="filter-label" for="task-filter">
+            <span class="visually-hidden">Filter tasks</span>
+            <select id="task-filter">
+              <option value="all">All tasks</option>
+              <option value="active">To do</option>
+              <option value="completed">Completed</option>
+            </select>
+          </label>
+        </div>
+
+        <ul class="task-list" id="task-list" aria-live="polite"></ul>
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <h3 id="empty-title">Your list is clear</h3>
+          <p id="empty-copy">Add your first study task to get started.</p>
+        </div>
+      </section>
+    </section>
+
+    <footer class="page-footer">
+      <span>One task at a time. You’ve got this.</span>
+      <span>Saved on this device</span>
+    </footer>
+  </main>
+</body>
+</html>
